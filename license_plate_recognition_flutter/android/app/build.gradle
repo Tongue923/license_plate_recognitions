@@ -1,0 +1,58 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.license_plate_recognition"
+    compileSdk = 34 // You can set this to 34 or the latest SDK version you need
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17
+    }
+
+    defaultConfig {
+        applicationId = "com.example.license_plate_recognition"
+        minSdk = 23 // Adjust if needed
+        targetSdk = 34 // Set this to the desired target SDK version
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+
+    // NDK support (if you're using native modules or need to configure NDK paths)
+    defaultConfig {
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+        }
+    }
+}
+
+
+dependencies {
+    // Flutter dependencies
+    implementation 'io.flutter:flutter_embedding_debug:1.0.0'
+
+    // HTTP client for communicating with your Python server (Flask app)
+    implementation 'com.squareup.okhttp3:okhttp:4.9.0'  // Optional, or use `http` Flutter package
+    
+    // Gson for handling JSON (if you need to process responses from Flask)
+    implementation 'com.google.code.gson:gson:2.8.8'  
+}
+
+flutter {
+    source = "../.."
+}

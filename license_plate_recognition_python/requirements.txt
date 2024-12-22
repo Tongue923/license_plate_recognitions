@@ -1,0 +1,11 @@
+Flask
+opencv-python
+ultralytics
+easyocr
+filterpy
+scikit-image
+lap
+cors
+apscheduler
+flask-cors
+fast-plate-ocr

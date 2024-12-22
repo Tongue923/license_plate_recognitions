@@ -1,0 +1,1 @@
+run python script first before start doing recognizer
