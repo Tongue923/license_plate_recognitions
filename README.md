@@ -1,1 +1,1 @@
-This is the project for my image processing course project
+This is the project for my image processing course
