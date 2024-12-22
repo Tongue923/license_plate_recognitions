@@ -1,2 +1,1 @@
-"# license_plate_recognitions" 
-"# license_plate_recognitions" 
+This is the project for my image processing course project
